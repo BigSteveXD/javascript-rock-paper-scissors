@@ -12,4 +12,28 @@ function getComputerChoice(){
     console.log(choice);
     return choice;
 }
-getComputerChoice();
+let computerSelection = getComputerChoice();
+
+let playerSelection = prompt("Choose rock, paper, or scissors");
+function getPlayerChoice(){
+    let choice = prompt("Choose rock, paper, or scissors");
+    choice = choice.toLowerCase;
+    if(choice == "rock"){
+        choice = "Rock";
+    }else if(choice == "paper"){
+        choice = "Paper";
+    }else if(choice == "scissors"){
+        choice = "Scissors";
+    }else {
+        choice = "Rock";
+    }
+    return choice;
+}
+
+function play(playerSelection, computerSelection){
+    if(playerSelection==computerSelection){
+        return "Tie";
+    }else if(playerSelection=="rock"&&computerSelection=="paper"){
+        return "You Lose! Paper beats Rock"
+    }
+}
