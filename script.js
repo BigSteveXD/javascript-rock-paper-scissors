@@ -15,9 +15,10 @@ function getComputerChoice(){
 let computerSelection = getComputerChoice();
 
 function getPlayerChoice(){
-    let choice = prompt("Choose rock, paper, or scissors");
-    console.log(choice);//
-    choice = choice.toLowerCase;
+    let choice = "rock";
+    choice = prompt("Choose rock, paper, or scissors");
+    //console.log(choice);//
+    choice = choice.toLowerCase();
     //console.log(choice);//
     if(choice == "rock"){
         choice = "rock";
@@ -26,14 +27,16 @@ function getPlayerChoice(){
     }else if(choice == "scissors"){
         choice = "scissors";
     }else {
+        console.log("ran");
         choice = "rock";
     }
     //console.log(choice);//
     return choice;
 }
 let playerSelection = getPlayerChoice();
-console.log("comp: " + computerSelection);//
-console.log("play: " + playerSelection);//
+
+//console.log("comp: " + computerSelection);//
+//console.log("play: " + playerSelection);//
 
 function play(playerSelection, computerSelection){
     if(playerSelection==computerSelection){
