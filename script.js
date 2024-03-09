@@ -12,7 +12,7 @@ function getComputerChoice(){
     //console.log(choice);//
     return choice;
 }
-let computerSelection = getComputerChoice();
+//let computerSelection = getComputerChoice();
 
 function getPlayerChoice(){
     let choice = "rock";
@@ -33,7 +33,7 @@ function getPlayerChoice(){
     //console.log(choice);//
     return choice;
 }
-let playerSelection = getPlayerChoice();
+//let playerSelection = getPlayerChoice();
 
 //console.log("comp: " + computerSelection);//
 //console.log("play: " + playerSelection);//
@@ -68,8 +68,29 @@ function play(playerSelection, computerSelection){
 function playGame(){
     let computerScore = 0;
     let playerScore = 0;
+    let winVar;
+
     for(let x=0; x<5; x++){
-        console.log(play(playerSelection, computerSelection));
-        
+        console.log(x);
+        let computerSelection = getComputerChoice();
+        let playerSelection = getPlayerChoice();
+        winVar = play(playerSelection, computerSelection);
+        console.log(winVar);
+        if(winVar.indexOf(-1)){
+            computerScore++; 
+        }else{
+            playerScore++;
+        }
+
+        if(x==4){
+            if(playerScore==computerScore){
+                console.log("Tie!");
+            }else if(playerScore>2){
+                console.log("You Win!");
+            }else if(computerScore>2){
+                console.log("You Lose!");
+            }
+        }
     }
 }
+playGame();
