@@ -14,7 +14,6 @@ function getComputerChoice(){
 }
 let computerSelection = getComputerChoice();
 
-let playerSelection = prompt("Choose rock, paper, or scissors");
 function getPlayerChoice(){
     let choice = prompt("Choose rock, paper, or scissors");
     choice = choice.toLowerCase;
@@ -29,6 +28,7 @@ function getPlayerChoice(){
     }
     return choice;
 }
+let playerSelection = getPlayerChoice();
 
 function play(playerSelection, computerSelection){
     if(playerSelection==computerSelection){
