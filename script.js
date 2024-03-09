@@ -33,7 +33,25 @@ let playerSelection = getPlayerChoice();
 function play(playerSelection, computerSelection){
     if(playerSelection==computerSelection){
         return "Tie";
-    }else if(playerSelection=="rock"&&computerSelection=="paper"){
-        return "You Lose! Paper beats Rock"
+    }else if(playerSelection=="rock"){
+        if(computerSelection=="paper"){
+            return "You Lose! Paper beats Rock";
+        }else{
+            return "You Win! Rock beats Scissors";
+        }
+    }else if(playerSelection=="paper"){
+        if(computerSelection=="scissors"){
+            return "You Lose! Scissors beats Paper";
+        }else{
+            return "You Win! Paper beats Rock";
+        }
+    }else if(playerSelection=="scissors"){
+        if(computerSelection=="rock"){
+            return "You Lose! Rock beats Scissors";
+        }else{
+            return "You Win! Scissors beats Paper";
+        }
+    }else{
+        return "Error!";
     }
 }
