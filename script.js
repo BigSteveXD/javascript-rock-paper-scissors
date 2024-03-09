@@ -1,7 +1,7 @@
 function getComputerChoice(){
     let random = Math.floor(Math.random() * 3);
-    console.log(random);
-    let choice = "default";
+    //console.log(random);//
+    let choice = "rock";
     if(random == 0){
         choice = "rock";
     }else if(random == 1){
@@ -9,26 +9,31 @@ function getComputerChoice(){
     }else {
         choice = "scissors";
     }
-    console.log(choice);
+    //console.log(choice);//
     return choice;
 }
 let computerSelection = getComputerChoice();
 
 function getPlayerChoice(){
     let choice = prompt("Choose rock, paper, or scissors");
+    console.log(choice);//
     choice = choice.toLowerCase;
+    //console.log(choice);//
     if(choice == "rock"){
-        choice = "Rock";
+        choice = "rock";
     }else if(choice == "paper"){
-        choice = "Paper";
+        choice = "paper";
     }else if(choice == "scissors"){
-        choice = "Scissors";
+        choice = "scissors";
     }else {
-        choice = "Rock";
+        choice = "rock";
     }
+    //console.log(choice);//
     return choice;
 }
 let playerSelection = getPlayerChoice();
+console.log("comp: " + computerSelection);//
+console.log("play: " + playerSelection);//
 
 function play(playerSelection, computerSelection){
     if(playerSelection==computerSelection){
@@ -55,3 +60,4 @@ function play(playerSelection, computerSelection){
         return "Error!";
     }
 }
+console.log(play(playerSelection, computerSelection));
