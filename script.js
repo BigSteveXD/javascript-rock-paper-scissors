@@ -63,4 +63,13 @@ function play(playerSelection, computerSelection){
         return "Error!";
     }
 }
-console.log(play(playerSelection, computerSelection));
+//console.log(play(playerSelection, computerSelection));
+
+function playGame(){
+    let computerScore = 0;
+    let playerScore = 0;
+    for(let x=0; x<5; x++){
+        console.log(play(playerSelection, computerSelection));
+        
+    }
+}
