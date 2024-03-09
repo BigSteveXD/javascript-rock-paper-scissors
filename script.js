@@ -76,7 +76,7 @@ function playGame(){
         let playerSelection = getPlayerChoice();
         winVar = play(playerSelection, computerSelection);
         console.log(winVar);
-        if(winVar.indexOf(-1)){
+        if(winVar.indexOf("Lose") > -1){//returns index of first occurance of word, else returns -1 //winVar.indexOf(-1)
             computerScore++; 
         }else{
             playerScore++;
