@@ -73,14 +73,20 @@ function playGame(){
     for(let x=0; x<5; x++){
         console.log(x);
         let computerSelection = getComputerChoice();
+        console.log("                                            " + computerSelection);
         let playerSelection = getPlayerChoice();
         winVar = play(playerSelection, computerSelection);
         console.log(winVar);
-        if(winVar.indexOf("Lose") > -1){//returns index of first occurance of word, else returns -1 //winVar.indexOf(-1)
-            computerScore++; 
+        if(winVar.indexOf("Tie") < 0){
+            if(winVar.indexOf("Lose") > -1){//returns index of first occurance of word, else returns -1 //winVar.indexOf(-1)
+                computerScore++; 
+            }else{
+                playerScore++;
+            }
         }else{
-            playerScore++;
+            console.log("temp");
         }
+        
 
         if(x==4){
             if(playerScore==computerScore){
