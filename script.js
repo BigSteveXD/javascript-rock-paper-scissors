@@ -71,9 +71,9 @@ function playGame(){
     let winVar;
 
     for(let x=0; x<5; x++){
-        console.log(x);
+        //console.log(x);
         let computerSelection = getComputerChoice();
-        console.log("                                            " + computerSelection);
+        //console.log("                                            " + computerSelection);
         let playerSelection = getPlayerChoice();
         winVar = play(playerSelection, computerSelection);
         console.log(winVar);
@@ -84,16 +84,15 @@ function playGame(){
                 playerScore++;
             }
         }else{
-            console.log("temp");
+            //console.log("temp");
         }
-        
 
         if(x==4){
             if(playerScore==computerScore){
                 console.log("Tie!");
             }else if(playerScore>2){
                 console.log("You Win!");
-            }else if(computerScore>2){
+            }else {//if(computerScore>2)
                 console.log("You Lose!");
             }
         }
