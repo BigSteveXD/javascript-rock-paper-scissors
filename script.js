@@ -1,3 +1,17 @@
+const getRock = document.querySelector("#rock");
+const getPaper = document.querySelector("#paper");
+const getScissors = document.querySelector("#scissors");
+
+getRock.addEventListener("click", () => {
+    alert("rock");
+});
+getPaper.addEventListener("click", () => {
+    alert("paper");
+});
+getScissors.addEventListener("click", () => {
+    alert("scissors");
+});
+
 function getComputerChoice(){
     let random = Math.floor(Math.random() * 3);
     //console.log(random);//
@@ -70,6 +84,7 @@ function playGame(){
     let playerScore = 0;
     let winVar;
 
+    /*
     for(let x=0; x<5; x++){
         //console.log(x);
         let computerSelection = getComputerChoice();
@@ -97,5 +112,6 @@ function playGame(){
             }
         }
     }
+    */
 }
 playGame();
