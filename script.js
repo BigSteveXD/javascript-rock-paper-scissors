@@ -4,12 +4,16 @@ const getScissors = document.querySelector("#scissors");
 
 getRock.addEventListener("click", () => {
     alert("rock");
+    //playround
+    playGame("rock");
 });
 getPaper.addEventListener("click", () => {
     alert("paper");
+    playGame("paper");
 });
 getScissors.addEventListener("click", () => {
     alert("scissors");
+    playGame("scissors");
 });
 
 function getComputerChoice(){
@@ -79,7 +83,7 @@ function play(playerSelection, computerSelection){
 }
 //console.log(play(playerSelection, computerSelection));
 
-function playGame(){
+function playGame(userSelection){
     let computerScore = 0;
     let playerScore = 0;
     let winVar;
@@ -89,7 +93,8 @@ function playGame(){
         //console.log(x);
         let computerSelection = getComputerChoice();
         //console.log("                                            " + computerSelection);
-        let playerSelection = getPlayerChoice();
+        //let playerSelection = getPlayerChoice();
+        let playerSelection = userSelection;
         winVar = play(playerSelection, computerSelection);
         console.log(winVar);
         if(winVar.indexOf("Tie") < 0){
