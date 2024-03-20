@@ -1,24 +1,33 @@
 const getRock = document.querySelector("#rock");
 const getPaper = document.querySelector("#paper");
 const getScissors = document.querySelector("#scissors");
+//const gameResult = document.getElementById("div");
+const gameResult = document.querySelector("div");
+let playerSelection = "";
 
-getRock.addEventListener("click", () => {
-    alert("rock");
-    //playround
-    playGame("rock");
+getRock.addEventListener("mousedown", () => {//onclick
+    console.log("rock");
+    playerSelection = "rock";
+    play(playerSelection);//play("rock");//playRound
+    //playerSelection = "";
 });
-getPaper.addEventListener("click", () => {
-    alert("paper");
-    playGame("paper");
+getPaper.addEventListener("mousedown", () => {
+    console.log("paper");
+    playerSelection = "paper";
+    play(playerSelection);//play("paper");
+    //playerSelection = "";
 });
-getScissors.addEventListener("click", () => {
-    alert("scissors");
-    playGame("scissors");
+getScissors.addEventListener("mousedown", () => {
+    console.log("scissors");
+    playerSelection = "scissors";
+    play(playerSelection);//play("scissors");
+    //playerSelection = "";
 });
+
+
 
 function getComputerChoice(){
     let random = Math.floor(Math.random() * 3);
-    //console.log(random);//
     let choice = "rock";
     if(random == 0){
         choice = "rock";
@@ -27,17 +36,15 @@ function getComputerChoice(){
     }else {
         choice = "scissors";
     }
-    //console.log(choice);//
     return choice;
 }
-//let computerSelection = getComputerChoice();
 
 function getPlayerChoice(){
     let choice = "rock";
-    choice = prompt("Choose rock, paper, or scissors");
+    //choice = prompt("Choose rock, paper, or scissors");
+    choice = playerSelection;
     //console.log(choice);//
     choice = choice.toLowerCase();
-    //console.log(choice);//
     if(choice == "rock"){
         choice = "rock";
     }else if(choice == "paper"){
@@ -48,13 +55,8 @@ function getPlayerChoice(){
         console.log("ran");
         choice = "rock";
     }
-    //console.log(choice);//
     return choice;
 }
-//let playerSelection = getPlayerChoice();
-
-//console.log("comp: " + computerSelection);//
-//console.log("play: " + playerSelection);//
 
 function play(playerSelection, computerSelection){
     if(playerSelection==computerSelection){
@@ -83,23 +85,23 @@ function play(playerSelection, computerSelection){
 }
 //console.log(play(playerSelection, computerSelection));
 
-function playGame(userSelection){
+function playGame(){//userSelection
     let computerScore = 0;
     let playerScore = 0;
     let winVar;
 
-    /*
+    //
     for(let x=0; x<5; x++){
         //console.log(x);
         let computerSelection = getComputerChoice();
         //console.log("                                            " + computerSelection);
-        //let playerSelection = getPlayerChoice();
-        let playerSelection = userSelection;
+        let playerSelection = getPlayerChoice();
+        //let playerSelection = userSelection;
         winVar = play(playerSelection, computerSelection);
         console.log(winVar);
         if(winVar.indexOf("Tie") < 0){
             if(winVar.indexOf("Lose") > -1){//returns index of first occurance of word, else returns -1 //winVar.indexOf(-1)
-                computerScore++; 
+                computerScore++;
             }else{
                 playerScore++;
             }
@@ -109,14 +111,17 @@ function playGame(userSelection){
 
         if(x==4){
             if(playerScore==computerScore){
-                console.log("Tie!");
+                //console.log("Tie!");
+                gameResult.textContent = "Tie!";
             }else if(playerScore>2){
-                console.log("You Win!");
+                //console.log("You Win!");
+                gameResult.textContent = "You Win!";
             }else {//if(computerScore>2)
-                console.log("You Lose!");
+                //console.log("You Lose!");
+                gameResult.textContent = "You Lose!";
             }
         }
     }
-    */
+    //
 }
 playGame();
